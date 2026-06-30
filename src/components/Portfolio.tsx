@@ -1,8 +1,109 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { ExternalLink, Github, Eye, ArrowLeft } from 'lucide-react';
+import { ExternalLink, Github, Eye, ArrowLeft, ImageOff } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { projects, categories } from '../data/projects';
+import { getProjectThumbnail } from '../utils/projectImages';
+
+const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: number }) => {
+  const [imgError, setImgError] = useState(false);
+  const thumbnailSrc = getProjectThumbnail(project.slug);
+  const showPlaceholder = imgError || !thumbnailSrc;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="glass rounded-2xl overflow-hidden hover:scale-[1.03] transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 group"
+    >
+      {/* Project Image */}
+      <div className="relative h-64 overflow-hidden bg-surface/50">
+        {!showPlaceholder ? (
+          <img
+            src={thumbnailSrc!}
+            alt={project.name}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            onError={() => setImgError(true)}
+            loading="lazy"
+          />
+        ) : (
+          <div className="w-full h-full flex flex-col items-center justify-center gap-3 text-gray-500">
+            <ImageOff size={48} className="text-gray-600" />
+            <div className="text-center">
+              <p className="text-sm font-medium text-gray-400">Coming Soon</p>
+              <p className="text-xs text-gray-600 mt-1">Screenshots being prepared</p>
+            </div>
+          </div>
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <Eye className="text-white" size={40} />
+        </div>
+      </div>
+
+      {/* Project Info */}
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+          {project.name}
+        </h3>
+
+        <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+          {project.description}
+        </p>
+
+        {/* Tech Stack */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.techStack.slice(0, 4).map((tech) => (
+            <span
+              key={tech}
+              className="px-3 py-1 bg-white/5 rounded-full text-xs text-gray-300"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        {/* Categories */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.category.map((cat) => (
+            <span
+              key={cat}
+              className="px-3 py-1 bg-primary/10 rounded-full text-xs text-primary"
+            >
+              {cat}
+            </span>
+          ))}
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex gap-3">
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-lg transition-all hover:scale-105"
+            >
+              <ExternalLink size={16} />
+              <span className="text-sm">Live Demo</span>
+            </a>
+          )}
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-all hover:scale-105"
+            >
+              <Github size={16} />
+            </a>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  );
+};
 
 const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -63,86 +164,7 @@ const Portfolio = () => {
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass rounded-2xl overflow-hidden hover:scale-[1.03] transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 group"
-              >
-                {/* Project Image */}
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={project.thumbnail}
-                    alt={project.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <Eye className="text-white" size={40} />
-                  </div>
-                </div>
-
-                {/* Project Info */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                    {project.name}
-                  </h3>
-
-                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
-                    {project.description}
-                  </p>
-
-                  {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.techStack.slice(0, 4).map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 bg-white/5 rounded-full text-xs text-gray-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Categories */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.category.map((cat) => (
-                      <span
-                        key={cat}
-                        className="px-3 py-1 bg-primary/10 rounded-full text-xs text-primary"
-                      >
-                        {cat}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex gap-3">
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-lg transition-all hover:scale-105"
-                      >
-                        <ExternalLink size={16} />
-                        <span className="text-sm">Live Demo</span>
-                      </a>
-                    )}
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-all hover:scale-105"
-                      >
-                        <Github size={16} />
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
+              <ProjectCard key={project.id} project={project} index={index} />
             ))}
           </div>
         </div>

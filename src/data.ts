@@ -13,7 +13,7 @@ export const resumeData: ResumeData = {
   phone: "+92 315-5512194",
   github: "https://github.com/foxilittlethin29",
   linkedin: "https://linkedin.com/in/mehboobkhalid",
-  portfolio: "https://mehboobkhalid.dev",
+  portfolio: "https://foxilittlethin29-arch.github.io/portfolio/",
   summary: "Results-driven Full Stack & AI Engineer with 5+ years of experience delivering scalable SaaS platforms, AI-powered automation systems, CRM solutions, and high-performance web applications. Skilled in React, Next.js, Node.js, TypeScript, Python, PostgreSQL, OpenAI APIs, LangChain, Docker, AWS, and cloud-native development. Passionate about building intelligent products that automate business workflows, improve productivity, and solve real-world problems.",
   experiences: [
     {

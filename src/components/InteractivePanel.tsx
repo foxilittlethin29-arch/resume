@@ -149,18 +149,20 @@ export const InteractivePanel: React.FC<InteractivePanelProps> = ({
 
       {/* 1. Live Keyword Search */}
       <div className="space-y-2">
-        <label className="text-xs font-mono font-bold text-gray-400 uppercase tracking-wider block">
+        <label htmlFor="keyword-search" className="text-xs font-mono font-bold text-gray-400 uppercase tracking-wider block">
           Keyword Filter & Search
         </label>
         <div className="relative">
           <input
+            id="keyword-search"
             type="text"
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search 'SaaS', 'AWS', 'Python'..."
+            aria-label="Search keywords to filter resume content"
             className="w-full text-sm font-sans bg-gray-50 border border-gray-200 focus:border-brand-primary focus:bg-white focus:outline-none py-2.5 pl-9 pr-4 rounded-xl transition-all"
           />
-          <Search size={14} className="absolute left-3.5 top-3.5 text-gray-400" />
+          <Search size={14} className="absolute left-3.5 top-3.5 text-gray-400" aria-hidden="true" />
         </div>
       </div>
 
@@ -204,10 +206,15 @@ export const InteractivePanel: React.FC<InteractivePanelProps> = ({
         </div>
 
         <form onSubmit={handleAnalyze} className="space-y-3">
+          <label htmlFor="job-description" className="text-xs font-mono font-bold text-gray-400 uppercase tracking-wider block">
+            Job Description
+          </label>
           <textarea
+            id="job-description"
             value={jobDescription}
             onChange={(e) => setJobDescription(e.target.value)}
             placeholder="Paste your Job Description (JD) here to match with Mehboob's resume..."
+            aria-label="Paste job description for ATS analysis"
             className="w-full h-24 text-xs font-sans bg-gray-50 border border-gray-200 focus:border-brand-primary focus:bg-white focus:outline-none p-3 rounded-xl resize-none leading-relaxed transition-all"
           />
           <button

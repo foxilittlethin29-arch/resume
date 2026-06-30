@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { MapPin, Mail, Phone, Github, Linkedin, Globe, Copy, Check } from "lucide-react";
 import { ResumeData } from "../types";
 
@@ -123,15 +124,13 @@ export const ResumeHeader: React.FC<ResumeHeaderProps> = ({ data }) => {
               <Linkedin size={13} />
               <span>LinkedIn</span>
             </a>
-            <a
-              href={data.portfolio}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/portfolio"
               className="flex items-center gap-1 hover:text-brand-primary text-gray-500 transition-colors"
             >
               <Globe size={13} />
               <span>Portfolio</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

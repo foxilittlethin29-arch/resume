@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import {
@@ -31,8 +31,6 @@ import { SkillsGrid } from "./components/SkillsGrid";
 import { EducationTimeline } from "./components/EducationTimeline";
 import { InteractivePanel } from "./components/InteractivePanel";
 import Portfolio from "./components/Portfolio";
-import ProjectDetails from "./components/ProjectDetails";
-import Contact from "./components/Contact";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<"interactive" | "classic">("interactive");
@@ -514,8 +512,6 @@ export default function App() {
             </>
           } />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/project/:slug" element={<ProjectDetails />} />
-          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
 

@@ -17,13 +17,11 @@ export const resumeData: ResumeData = {
   summary: "Results-driven Full Stack & AI Engineer with 5+ years of experience delivering scalable SaaS platforms, AI-powered automation systems, CRM solutions, and high-performance web applications. Skilled in React, Next.js, Node.js, TypeScript, Python, PostgreSQL, OpenAI APIs, LangChain, Docker, AWS, and cloud-native development. Passionate about building intelligent products that automate business workflows, improve productivity, and solve real-world problems.",
   experiences: [
     {
-      role: "Lead Full Stack Developer",
-      company: "Direct International Client",
+      role: "Lead Full Stack & AI Solutions Developer",
+      company: "Direct International Client End-to-End Product Development",
       period: "2026 – Present",
       location: "Remote",
       bullets: [
-        "Direct Client Acquisition • Fiverr • Upwork • Freelancer • Truelancer",
-        "Project: TradingNova – AI Trading Platform",
         "Leading full-stack development of TradingNova, an advanced AI-powered trading platform, architecting a scalable SaaS solution with modern frontend and backend technologies.",
         "Integrating an intelligent AI Assistant that enables users to analyze markets, receive trading guidance, interact naturally with the platform, and improve their overall trading workflow.",
         "Developing a comprehensive trading dashboard with real-time data visualization, interactive charts, and performance monitoring tools.",
@@ -48,7 +46,7 @@ export const resumeData: ResumeData = {
     },
     {
       role: "Website & SaaS Application Developer",
-      company: "International Remote Clients",
+      company: "Direct International Client End-to-End Product Development",
       period: "2016 – Present",
       location: "Remote",
       bullets: [

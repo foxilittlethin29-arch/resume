@@ -18,17 +18,18 @@ export const resumeData: ResumeData = {
   experiences: [
     {
       role: "Lead Full Stack Developer",
-      company: "TradingNova Trading Platform",
+      company: "Direct International Client",
       period: "2026 – Present",
       location: "Remote",
       bullets: [
-        "Secured a direct international client engagement to architect and develop the TradingNova platform, a comprehensive SaaS-based trading solution.",
-        "Leading full-stack development of the platform, delivering a modern, high-performance trading interface with real-time data visualization and interactive dashboards.",
-        "Architecting a scalable SaaS infrastructure to support multi-user access, subscription management, and seamless platform growth.",
-        "Integrating third-party APIs for market data, authentication, and payment processing to create a unified trading ecosystem.",
-        "Optimizing application performance through efficient state management, lazy loading, and server-side rendering techniques.",
-        "Implementing responsive, modern UI/UX designs with a focus on usability, accessibility, and a polished visual experience.",
-        "Building the platform as an ongoing project with continuous feature enhancements, iterative improvements, and production-ready deployments."
+        "Direct Client Acquisition • Fiverr • Upwork • Freelancer • Truelancer",
+        "Project: TradingNova – AI Trading Platform",
+        "Leading full-stack development of TradingNova, an advanced AI-powered trading platform, architecting a scalable SaaS solution with modern frontend and backend technologies.",
+        "Integrating an intelligent AI Assistant that enables users to analyze markets, receive trading guidance, interact naturally with the platform, and improve their overall trading workflow.",
+        "Developing a comprehensive trading dashboard with real-time data visualization, interactive charts, and performance monitoring tools.",
+        "Implementing secure authentication systems, REST API integrations, and robust backend services to support a seamless trading ecosystem.",
+        "Optimizing application performance through efficient state management, lazy loading, and server-side rendering for a responsive user experience.",
+        "Building the platform with production-ready standards, focusing on scalable architecture, maintainable code, and continuous feature enhancements."
       ]
     },
     {

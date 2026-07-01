@@ -17,6 +17,21 @@ export const resumeData: ResumeData = {
   summary: "Results-driven Full Stack & AI Engineer with 5+ years of experience delivering scalable SaaS platforms, AI-powered automation systems, CRM solutions, and high-performance web applications. Skilled in React, Next.js, Node.js, TypeScript, Python, PostgreSQL, OpenAI APIs, LangChain, Docker, AWS, and cloud-native development. Passionate about building intelligent products that automate business workflows, improve productivity, and solve real-world problems.",
   experiences: [
     {
+      role: "Lead Full Stack Developer",
+      company: "TradingNova Trading Platform",
+      period: "2026 – Present",
+      location: "Remote",
+      bullets: [
+        "Secured a direct international client engagement to architect and develop the TradingNova platform, a comprehensive SaaS-based trading solution.",
+        "Leading full-stack development of the platform, delivering a modern, high-performance trading interface with real-time data visualization and interactive dashboards.",
+        "Architecting a scalable SaaS infrastructure to support multi-user access, subscription management, and seamless platform growth.",
+        "Integrating third-party APIs for market data, authentication, and payment processing to create a unified trading ecosystem.",
+        "Optimizing application performance through efficient state management, lazy loading, and server-side rendering techniques.",
+        "Implementing responsive, modern UI/UX designs with a focus on usability, accessibility, and a polished visual experience.",
+        "Building the platform as an ongoing project with continuous feature enhancements, iterative improvements, and production-ready deployments."
+      ]
+    },
+    {
       role: "Full Stack & AI Engineer",
       company: "Freelance (Direct Client Hunting, Fiverr, Upwork, Freelancer, Truelancer)",
       period: "2022 – Present",
@@ -31,16 +46,19 @@ export const resumeData: ResumeData = {
       ]
     },
     {
-      role: "Software Engineer",
+      role: "Website & SaaS Application Developer",
       company: "International Remote Clients",
       period: "2016 – Present",
-      location: "Remote / International",
+      location: "Remote",
       bullets: [
-        "Crafted high-fidelity, responsive websites and modern frontends utilizing React, Next.js, and Tailwind CSS.",
-        "Developed business analytics dashboards containing real-time data visualizations, charts, and interactive filtering.",
-        "Collaborated with fast-paced startups across multiple industries to prototype and deliver AI-powered web applications.",
-        "Managed the complete software development lifecycle (SDLC) from design and architecture to deployment and monitoring.",
-        "Maintained long-term, high-trust client relationships through clear communication, project management, and stellar business analysis."
+        "Delivered full-stack web development solutions for international clients, building responsive, high-performance web applications using React, TypeScript, and Node.js.",
+        "Developed and deployed scalable SaaS applications with modern architectures, integrating authentication systems, REST APIs, and database backends.",
+        "Built AI-powered applications and business automation tools to streamline client workflows and improve operational efficiency.",
+        "Designed and implemented admin dashboards with real-time data visualization, user management, and analytics reporting.",
+        "Created high-conversion landing pages and responsive web applications optimized for performance, accessibility, and cross-device compatibility.",
+        "Collaborated closely with clients across multiple industries to translate business requirements into robust technical solutions.",
+        "Containerized applications with Docker for consistent development, staging, and production environments.",
+        "Styled modern user interfaces with Tailwind CSS, ensuring clean, maintainable, and visually consistent designs."
       ]
     }
   ],
